@@ -61,13 +61,22 @@
             username = '$username',
             password = '$password'
         ";
-        
-        //3. Execute Query and Save Data in Database
-        $conn = mysqli_connect('localhost', 'root', '') or die(mysqli_connect_error());  //Database Connection
-        $db_select = mysqli_select_db($conn, 'food-order') or die(mysqli_connect_error()); //Selecting database
 
-        // $res = mysqli_query($conn,$sql) or die(mysqli_error());
+        //3. Executing Query and Saving Data into Database
+        $res = mysqli_query($conn,$sql) or die(mysqli_connect_error());
 
+        //4. Check whether the (Query is Executed) data is inserted or not and display appropriate message
+        if($res==TRUE)
+        {
+            //Data Inserted
+            echo "Data Inserted";
+        }
+        else
+        {
+            //Failed to insert Data
+            echo "Failed to Insert Data";
+        }
+    
     }
-
+    
 ?>
