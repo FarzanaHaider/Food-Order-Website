@@ -1,7 +1,9 @@
 <?php
+    //Start Session
+    session_start();
 
     //Create constants to Store Non-repeating Values
-
+    define('SITEURL','http://localhost/Food-Order-Website/');
     define('LOCALHOST','localhost');
     define('DB_USERNAME','root');
     define('DB_PASSWORD','');

@@ -8,7 +8,16 @@
             <div class="wrapper">
 
                 <h1>Add Admin</h1>
-                <br><br><br>
+                <br>
+
+                <?php 
+                    if(isset($_SESSION['add'])) //Checking whether the session is add or not
+                    {
+                        echo $_SESSION['add'];  //Displaying Session Message
+                        unset($_SESSION['add']); //Removing Session Message
+                    }
+                ?>
+                <br><br>
 
                 <form action="" method="post">
                     <table class="tbl-30">
@@ -69,12 +78,20 @@
         if($res==TRUE)
         {
             //Data Inserted
-            echo "Data Inserted";
+            // echo "Data Inserted";
+            //Create a Session Variable to Display Message
+            $_SESSION['add'] = "Admin Added Successfuly";
+            //Redirect Page to Manage Admin
+            header("location:".SITEURL.'admin/manage-admin.php');
         }
         else
         {
             //Failed to insert Data
-            echo "Failed to Insert Data";
+            // echo "Failed to Insert Data";
+            //Create a Session Variable to Display Message
+            $_SESSION['add'] = "Failed to Add Admin";
+            //Redirect Page to Add Admin
+            header("location:".SITEURL.'admin/add-admin.php');
         }
     
     }
