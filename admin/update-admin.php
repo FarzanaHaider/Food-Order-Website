@@ -11,7 +11,7 @@
             $id=$_GET['id'];
 
             //2. Create SQL Query to Get the Details
-            $sql="SELECT * FROM tbl_admin";
+            $sql="SELECT * FROM tbl_admin WHERE id=$id";
 
             //Execute the Query
             $res=mysqli_query($conn, $sql);
@@ -25,7 +25,6 @@
                 if($count==1)
                 {
                     //Get the details
-                    // echo "Admin Available";
                     $row = mysqli_fetch_assoc($res);
 
                     $full_name = $row['full_name'];
@@ -75,7 +74,6 @@
         //Check whether the Submit Button is clicked or not
         if(isset($_POST['submit']))
         {
-            // echo "Button Clicked";
             // Get all the values from form to update
             $id = $_POST['id'];
             $full_name = $_POST['full_name'];
@@ -102,7 +100,7 @@
             else
             {
                  //Failed to Update Admin 
-                 $_SESSION['update'] = "<div class='error'>Failed to Delete Admin</div>";
+                 $_SESSION['update'] = "<div class='error'>Failed to Update Admin</div>";
                  //Redirect to Manage Admin Page
                  header('location:'.SITEURL.'admin/manage-admin.php');
             }

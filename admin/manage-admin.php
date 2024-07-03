@@ -41,6 +41,12 @@
                         echo $_SESSION['pwd-not-match'];
                         unset($_SESSION['pwd-not-match']);
                     }
+
+                    if(isset($_SESSION['change-pwd']))
+                    {
+                        echo $_SESSION['change-pwd'];
+                        unset($_SESSION['change-pwd']);
+                    }
                 
                 ?>
                 <br><br>
@@ -93,7 +99,7 @@
                                                 <td><?php echo $full_name;?></td>
                                                 <td><?php echo $username;?></td>
                                                 <td>
-                                                    <a href="<?php echo SITEURL;?>admin/update-password.php? id=<?php echo $id; ?> " class="btn-primary">Change Password</a>
+                                                    <a href="<?php echo SITEURL;?>admin/update-password.php? id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
                                                     <a href="<?php echo SITEURL;?>admin/update-admin.php? id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
                                                     <a href="<?php echo SITEURL;?>admin/delete-admin.php? id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                                                 </td>
