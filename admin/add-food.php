@@ -64,7 +64,7 @@
                                 //Count Rows to check whether we have categories or not
                                 $count = mysqli_num_rows($res);
 
-                                //If count is greater than zero, we hava data
+                                //If count is greater than zero, we have data
                                 if($count>0)
                                 {
                                     //We have categories
@@ -155,8 +155,7 @@
                     $active = "No"; //Setting Default Value
                 }
 
-                //2. Upload the Image id selected
-                //Check whether the select image is clicked or not and upload only if the image is selected
+                //2. Upload the Image if selected
                 if(isset($_FILES['image']['name']))
                 {
                     //Get the details of the selected image
@@ -168,16 +167,16 @@
                         //Image is selected
                         //A. Rename the Image
                         //Get the extension of selected image
-                        $ext = end(explode('.',$image_name));
+                        $ext = strtolower(end(explode('.', $image_name)));
 
                         //Create New Name for Image
-                        $image_name = "Food-Name-".rand(0000,9999).".".$ext;
+                        $image_name = "Food-Name-".rand(0000, 9999).".".$ext;
 
                         //B. Upload the Image
                         //Get the Src Path and Destination Path
 
                         //Source path is the current location of the image
-                        $src = $_FILES['image']['tmp-name'];
+                        $src = $_FILES['image']['tmp_name'];
 
                         //Destination Path for the image to be uploaded
                         $dst = "../images/food/".$image_name;
@@ -186,7 +185,7 @@
                         $upload = move_uploaded_file($src, $dst);
 
                         //check whether image uploaded or not
-                        if($upload==false)
+                        if($upload == false)
                         {
                             //Failed to Upload the image
                             //Redirect to Add Food Page with Error 
@@ -241,7 +240,6 @@
 
     </div>
 </div>
-
 
 <?php 
     include('partials/footer.php');
