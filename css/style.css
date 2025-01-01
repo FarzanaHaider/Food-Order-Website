@@ -203,7 +203,34 @@ fieldset{
     font-weight: bold;
 }
 
+/* CSS for login page */
+.login{
+    border: 1px solid gray;
+    width:20%;
+    margin: 10% auto;
+    padding: 2% ;
+}
 
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    color: white;
+}
 
 /* CSS for Mobile Size or Smaller Screen */
 
@@ -260,3 +287,5 @@ fieldset{
         width: 100%;
     }
 }
+
+

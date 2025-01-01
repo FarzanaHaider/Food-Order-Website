@@ -1,4 +1,5 @@
 <?php include('config/constants.php'); ?>
+<!-- <?php session_start(); ?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,7 @@
     <section class="navbar">
         <div class="container">
             <div class="logo">
-                <a href="#" title="Logo">
+                <a href="<?php echo SITEURL; ?>" title="Logo">
                     <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
                 </a>
             </div>
@@ -36,6 +37,15 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <?php if(!isset($_SESSION['customer_id'])): ?>
+                        <li>
+                            <a href="<?php echo SITEURL; ?>login.php" class="btn btn-primary">Login</a>
+                        </li>
+                    <?php else: ?>
+                        <li>
+                            <a href="<?php echo SITEURL; ?>logout.php" class="btn btn-primary">Logout</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
 
