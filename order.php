@@ -112,7 +112,7 @@ if(isset($_GET['food_id'])) {
 
             if($res2 == true) {
                 $_SESSION['order'] = "<div class='success text-center'>Food Ordered Successfully.</div>";
-                header('location:'.SITEURL);
+                //header('location:'.SITEURL);
                 exit();
             } else {
                 $_SESSION['order'] = "<div class='error text-center'>Failed to Order Food.</div>";
