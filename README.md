@@ -10,5 +10,5 @@ Search and Filter: Quickly find desired food items.
 
 🚀 Technologies Used
 Frontend: HTML, CSS, JavaScript
-Backend: PHP (Laravel/Plain PHP)
+Backend: PHP 
 Database: MySQL
